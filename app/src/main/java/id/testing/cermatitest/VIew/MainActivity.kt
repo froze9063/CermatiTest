@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Adapter
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -185,7 +186,8 @@ class MainActivity : AppCompatActivity(), MyCallback.Companion.SearchUserCallbac
     }
 
     override fun onSearchClicked(userModel: UserModel) {
-
+        val name = userModel.login ?: ""
+        Toast.makeText(this,"$name CLicked",Toast.LENGTH_LONG).show()
     }
 
     override fun onSearchErrorClicked() {
