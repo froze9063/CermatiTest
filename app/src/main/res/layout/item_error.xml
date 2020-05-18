@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:gravity="center_horizontal"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:layout_height="wrap_content">
+
+    <id.testing.cermatitest.VIew.MyTextView
+        android:id="@+id/txtContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="There was an error"
+        app:myFontStyle="nunito_sans_reguler"
+        android:textColor="@color/black"
+        />
+
+    <Space
+        android:layout_width="4dp"
+        android:layout_height="wrap_content"/>
+
+    <id.testing.cermatitest.VIew.MyTextView
+        android:id="@+id/txtTryAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Try Again"
+        android:textColor="@color/blue"
+        app:myFontStyle="nunito_sans_bold"
+        />
+
+</LinearLayout>
