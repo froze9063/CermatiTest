@@ -50,7 +50,6 @@ class MainActivity : AppCompatActivity(), MyCallback.Companion.SearchUserCallbac
         rvUser.adapter = userAdapter
         swipeRefresh.setOnRefreshListener(this)
         searchController = SearchController(this)
-        searchUser(false)
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -59,7 +58,17 @@ class MainActivity : AppCompatActivity(), MyCallback.Companion.SearchUserCallbac
 
             override fun onQueryTextChange(newText: String?): Boolean {
                search = newText ?: ""
-               searchUser(false)
+               val searchLength = search.length
+
+               if (searchLength > 0){
+                   searchUser(false)
+               }
+                else{
+                   rvUser.visibility = View.GONE
+                   shimerLayout.visibility = View.GONE
+                   linearEmpty.visibility = View.GONE
+               }
+
                return false
             }
         })
